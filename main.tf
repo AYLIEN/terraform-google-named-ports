@@ -11,12 +11,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 data "external" "named_ports" {
   program = ["${path.module}/add_named_ports.sh"]
 
   query = {
     instance_group = "${var.instance_group}"
-    name           = "${var.name}"
-    port           = "${var.port}"
+    named_ports    = "${join(",", var.named_ports)}"
   }
 }

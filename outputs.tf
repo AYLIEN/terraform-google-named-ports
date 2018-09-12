@@ -17,14 +17,9 @@ output "instance_group" {
   value       = "${var.instance_group}"
 }
 
-output "name" {
-  description = "name of the port"
-  value       = "${var.name}"
-}
-
-output "port" {
-  description = "port number"
-  value       = "${var.port}"
+output "named_ports" {
+  description = "name:port mapping list"
+  value       = "${var.named_ports}"
 }
 
 output "fingerprint" {
