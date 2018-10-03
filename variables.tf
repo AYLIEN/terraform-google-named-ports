@@ -12,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Hack to being able to depends_on from the module on resource
+variable "depends_on" { default = [], type = "list" }
+
 variable "instance_group" {
   description = "self_link of instance group to update"
 }
