@@ -14,20 +14,21 @@
 
 output "instance_group" {
   description = "self_link of instance group to update"
-  value       = "${var.instance_group}"
+  value       = var.instance_group
 }
 
 output "named_ports" {
   description = "name:port mapping list"
-  value       = "${var.named_ports}"
+  value       = var.named_ports
 }
 
 output "fingerprint" {
   description = "fingerprint from the API response"
-  value       = "${lookup(data.external.named_ports.result, "fingerprint")}"
+  value       = data.external.named_ports.result["fingerprint"]
 }
 
 output "id" {
   description = "id from the API response"
-  value       = "${lookup(data.external.named_ports.result, "id")}"
+  value       = data.external.named_ports.result["id"]
 }
+

@@ -16,7 +16,8 @@ data "external" "named_ports" {
   program = ["${path.module}/add_named_ports.sh"]
 
   query = {
-    instance_group = "${var.instance_group}"
-    named_ports    = "${join(",", var.named_ports)}"
+    instance_group = var.instance_group
+    named_ports    = join(",", var.named_ports)
   }
 }
+
